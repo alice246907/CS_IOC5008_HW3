@@ -1,0 +1,59 @@
+train:
+  epochs: 201
+  batch_size: 32
+  img_size: 416
+  n_cpu: 4
+  model_def: ./config/yolov3-tiny.cfg
+
+  gradient_accumulations: 2
+  checkpoint_interval: 5
+  log_interval: 50
+  evaluation_interval: 10
+
+  pretrained_epoch: 136
+  weight_path: ./weights
+
+  train_data: ./dataset/train_img.txt
+  valid_data: ./dataset/test_img.txt
+  class_names: ./dataset/classes.names
+
+test:
+  batch_size: 32
+  img_size: 416
+  n_cpu: 4
+  model_def: ./config/yolov3-tiny.cfg
+
+  weight_path: ./weights/115.pth
+
+  test_data: ./dataset/test_img.txt
+  class_names: ./dataset/classes.names
+
+  iou_thres: 0.5
+  conf_thres: 0.01
+  nms_thres: 0.5
+
+detect:
+  batch_size: 32
+  n_cpu: 4
+  img_size: 416
+
+  image_folder: ./dataset/test_img.txt
+  model_def: ./config/yolov3-tiny.cfg
+
+  weight_path: ./weights/121.pth
+  class_path: ./dataset/classes.names
+  output_path: ./output
+
+  conf_thres: 0.01
+  nms_thres: 0.5
+
+  file_name: ./json/0756141_011112.json
+
+
+  
+  
+  
+
+
+
+
