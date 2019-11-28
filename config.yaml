@@ -47,7 +47,7 @@ detect:
   conf_thres: 0.01
   nms_thres: 0.5
 
-  file_name: ./json/0756141_011112.json
+  file_name: ./json/0756141.json
 
 
   
